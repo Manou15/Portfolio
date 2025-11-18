@@ -1,0 +1,127 @@
+:root {
+  --bg: #0e1a2b;
+  --bg-light: #15243b;
+  --bg-lighter: #1c2a45;
+
+  --text-main: #e6e6e6;
+  --text-secondary: #a0a0a0;
+  --text-tertiary: #7a7a7a;
+
+  --accent: #ff7f50;
+  --accent-hover: #ffa07a;
+
+  --link-color: #ff7f50;
+  --link-hover: #ffa07a;
+
+  --card-bg: #15243b;
+  --card-hover: #1c2a45;
+  --card-border: rgba(255,127,80,0.15);
+  --card-shadow: rgba(0,0,0,0.4);
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body{
+    font-family: 'Roboto',sans-serif;
+    background-color: var(--bg);
+    color: var(--text-secondary);
+}
+
+.container{
+    display: flex;
+}
+
+.sidebar{
+    height: 100vh;
+    width: 350rem;
+    margin: 10rem;
+
+}
+
+h1{
+    font-family: 'Inter',sans-serif;
+    color: var(--text-main);
+    margin-bottom: 9px;
+}
+
+h3{
+    margin-bottom: 14px;
+}
+
+
+
+.navIn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+hr{
+    width: 30px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+      color: var(--text-secondary);
+
+}
+
+.nav-list li:nth-child(1) .nav-line {
+  display: inline-block;
+  width: 65px;        
+  height: 1.7px;          
+  background-color: var(--text-main); 
+  margin-right: 0.75rem; 
+  margin-bottom: 0.20rem;
+}
+
+.nav-list li:nth-child(2) .nav-line,
+.nav-list li:nth-child(3) .nav-line{
+ display: inline-block;
+  width: 40px;        
+  height: 1.7px;          
+  background-color: var(--text-secondary); 
+  margin-right: 0.75rem; 
+  margin-bottom: 0.20rem;
+  transition: width 0.1s ease;
+}
+
+.nav-list li:nth-child(2) a,
+.nav-list li:nth-child(3) a{
+    color: var(--text-secondary);
+}
+
+.nav-list li:nth-child(2) a:hover .nav-line, .nav-list li:nth-child(3) a:hover .nav-line{
+    width: 65px;
+    background-color: var(--text-main);
+}
+
+.nav-list li:nth-child(2) a:hover,
+.nav-list li:nth-child(3) a:hover {
+    color: var(--text-main);
+}
+
+
+
+.nav-list li {
+  margin-bottom: 1.5rem;
+}
+
+.nav-list li a{
+    color: var(--text-main);
+    text-decoration: none;
+    font-size: 15px;
+}
+
+
+
+
