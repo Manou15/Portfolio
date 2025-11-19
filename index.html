@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="/images/M.png" />
+    <link rel="icon" href="/assets/M.png" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -24,11 +24,13 @@
               <a href="#"><span class="nav-line"></span>ABOUT</a>
             </li>
             <li>
-              <a href="#"><span class="nav-line"></span>EXPERIENCE</a>
+              <a href="#skills-sections"
+                ><span class="nav-line"></span>SKILLS & TECHNOLOGIES</a
+              >
             </li>
 
             <li>
-              <a href="#"><span class="nav-line"></span>PROJECTS</a>
+              <a href="#projects"><span class="nav-line"></span>PROJECTS</a>
             </li>
           </ul>
         </nav>
@@ -53,19 +55,67 @@
       </aside>
 
       <main class="content">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto
-        quod ipsa earum provident commodi error fugiat repellat harum temporibus
-        praesentium ea similique inventore facilis voluptatibus libero, unde
-        voluptate! Mollitia, quos. Lorem ipsum dolor sit amet consectetur,
-        adipisicing elit. Voluptate, culpa nemo porro iste eligendi expedita
-        animi maxime iure ipsa rem quia amet quos voluptas corporis nesciunt
-        asperiores vitae aut! Vitae. Lorem ipsum dolor sit amet consectetur
-        adipisicing elit. Repudiandae veritatis ipsa hic quo rerum tempore
-        aperiam deleniti fugiat corrupti? Reprehenderit aut quisquam, maxime
-        totam voluptas porro saepe ipsa ullam eligendi. Lorem ipsum dolor sit
-        amet consectetur adipisicing elit. Totam, placeat enim. Velit sint ab,
-        assumenda minus quae laboriosam eos architecto iusto mollitia
-        laudantium, et iure officia explicabo reiciendis aliquam deleniti!Lorem
+        <p class="about">
+          I’m a developer passionate about crafting accessible, pixel-perfect
+          user interfaces that blend thoughtful design with robust engineering.
+          My favorite work lies at the intersection of design and development,
+          creating experiences that not only look great but are meticulously
+          built for performance and usability. <br />
+          <br />
+
+          Currently, I'm a Senior Front-End Engineer at Klaviyo, specializing in
+          accessibility. I contribute to the creation and maintenance of UI
+          components that power Klaviyo’s frontend, ensuring our platform meets
+          web accessibility standards and best practices to deliver an inclusive
+          user experience. <br /><br />
+
+          In the past, I've had the opportunity to develop software across a
+          variety of settings — from advertising agencies and large corporations
+          to start-ups and small digital product studios. Additionally, I also
+          released a comprehensive video course a few years ago, guiding
+          learners through building a web app with the Spotify API.
+        </p>
+
+        <section id="skills-sections">
+          <h3 class="myH3">Skills & Technologies</h3>
+          <div class="chips">
+            <span class="chip">HTML</span>
+
+            <span class="chip">CSS</span>
+
+            <span class="chip">Javascript</span>
+
+            <span class="chip">Java</span>
+
+            <span class="chip">Python</span>
+
+            <span class="chip">Git</span>
+
+            <span class="chip">APIs</span>
+
+            <span class="chip">Phaser6</span>
+          </div>
+        </section>
+
+        <a
+          class="resume-link"
+          href="assets/resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Full Résumé <i class="fa-solid fa-turn-up"></i>
+        </a>
+
+        <section id="projects">
+          <h3 class="myH3">Projects</h3>
+          <div class="project-container">
+            <img src="/assets/connect4.png" alt="connect4" width="100px" height="100px">
+            <div class="project-description">
+              <p class="title">Connect4Game <i class="fa-solid fa-turn-up"></i></p>
+              <p class="desc">Jeu Puissance 4 avec logique de vérification des lignes gagnantes; en S1 j’ai codé la logique, en S2 j’ai ajouté l’interface graphique.</p>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
