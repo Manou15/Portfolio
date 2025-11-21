@@ -1,4 +1,8 @@
+
 :root {
+
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1;
   --bg: #0e1a2b;
   --bg-light: #15243b;
   --bg-lighter: #1c2a45;
@@ -19,6 +23,12 @@
   --card-shadow: rgba(0,0,0,0.4);
   --skills: #142E3F;
   --turquoise:#64FFDA;
+}
+
+@supports (font-variation-settings: normal) {
+  :root { 
+    font-family: InterVariable, sans-serif; 
+  }
 }
 
 html, body{
@@ -69,61 +79,56 @@ aside h3{
 aside p{
     margin-top: 0;
 }
-
 .nav-list {
   list-style: none;
   padding: 0;
   margin: 85px 0 140px 0;
-    color: var(--text-secondary);
 
 }
-
-.nav-list li:nth-child(1) .nav-line {
-  display: inline-block;
-  width: 65px;        
-  height: 1.7px;          
-  background-color: var(--text-main); 
-  margin-right: 0.75rem; 
-  margin-bottom: 0.20rem;
-}
-
-.nav-list li:nth-child(2) .nav-line,
-.nav-list li:nth-child(3) .nav-line{
- display: inline-block;
-  width: 40px;        
-  height: 1.7px;          
-  background-color: var(--text-secondary); 
-  margin-right: 0.75rem; 
-  margin-bottom: 0.20rem;
-  transition: width 0.1s ease;
-}
-
-.nav-list li:nth-child(2) a,
-.nav-list li:nth-child(3) a{
-    color: var(--text-secondary);
-}
-
-.nav-list li:nth-child(2) a:hover .nav-line, .nav-list li:nth-child(3) a:hover .nav-line{
-    width: 65px;
-    background-color: var(--text-main);
-}
-
-.nav-list li:nth-child(2) a:hover,
-.nav-list li:nth-child(3) a:hover {
-    color: var(--text-main);
-}
-
 
 .nav-list li {
   margin-bottom: 1.5rem;
 }
 
-.nav-list li a{
-    color: var(--text-main);
-    text-decoration: none;
-    font-size: 15px;
-    font-family: 'Inter',sans-serif;
+.nav-list li a {
+  text-decoration: none;
+  font-size: 13px;
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  
+  color: var(--text-secondary); 
+  transition: color .18s ease;
 }
+
+
+.nav-list .nav-line {
+  display: inline-block;
+  width: 40px;
+  height: 1.7px;
+  background-color: var(--text-secondary); 
+  margin-right: 0.75rem;
+  margin-bottom: 0.20rem;
+  transition: width 240ms cubic-bezier(.2,.9,.3,1), background-color 180ms ease;
+}
+
+
+.nav-list li a:hover {
+  color: var(--text-main); 
+}
+
+/*js style*/
+.nav-list a.active {
+  color: var(--text-main); 
+}
+
+
+.nav-list a.active .nav-line {
+  width: 65px;
+  background-color: var(--text-main); 
+}
+
+
+
 
 .icon i{
     color: var(--text-secondary);
@@ -138,7 +143,7 @@ aside p{
 
 /*main*/
 main .about{
-    color: var(--turquoise);
+    color: var(--text-secondary);
     font-size: 17px;
 }
 
@@ -210,11 +215,16 @@ a.resume-link:hover i{
     gap: 1rem;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
+     transition: all 0.25s ease;
 }
 
 .project-container:hover{
-    box-shadow: 0px 4px 16px hsl(174, 72%, 36%);
-    backdrop-filter: blur(5);
+   background-color: hsl(213, 41%, 19%);
+    box-shadow: 
+        0 0 0 1px rgba(100,255,218,0.25), 
+        0 12px 32px rgba(0,0,0,0.35),
+        0 0 32px rgba(100,255,218,0.20); 
 }
 
 .title{
