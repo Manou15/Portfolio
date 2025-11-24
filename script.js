@@ -1,55 +1,106 @@
 document.querySelectorAll('.nav-list a[href^="#"]').forEach(link => {
     link.addEventListener('click', function(e){
-        e.preventDefault();
+        e.preventDefault(); // Empêche le comportement de saut immédiat
         const id = this.getAttribute('href').slice(1);
         const target = document.getElementById(id);
         if(target){
-            target.scrollIntoView({ behavior: 'smooth', block: 'start'});
-            history.replaceState(null, '', '#' + id);
+
+            target.scrollIntoView({ behavior: 'smooth', block: 'start'}); 
+            // Met à jour l'URL sans recharger la page
+            history.replaceState(null, '', '#' + id); 
         }
     })
 });
 
-const sectionNodes = Array.from(document.querySelectorAll('main [id]'));
+const navLinks = document.querySelectorAll('.nav-list a[href^="#"]');
 
-const idToLink = {};
-document.querySelectorAll('.nav-list a[href^="#"]').forEach(a => {
-  const id = a.getAttribute('href').slice(1);
-  if (id) idToLink[id] = a;
+// Sélectionne toutes les sections de contenu qui ont un ID
+const sections = Array.from(document.querySelectorAll('main [id]'));
+
+function updateActiveLink() {
+    let currentSectionId = ''; 
+
+    const scrollPosition = window.scrollY + 120; 
+
+    sections.forEach(section => {
+        if (section.offsetTop <= scrollPosition) {
+            // Si oui, on stocke son ID. Comme on boucle de haut en bas, 
+            // le dernier ID stocké sera la section la plus basse/récente 
+            // qui est en haut de la fenêtre.
+            currentSectionId = section.id;
+        }
+    });
+
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        link.removeAttribute('aria-current');
+
+        // Vérifie si le lien correspond à l'ID de la section la plus visible
+        if (link.getAttribute('href') === `#${currentSectionId}`) {
+            link.classList.add('active');
+            link.setAttribute('aria-current', 'true');
+        }
+    });
+}
+
+
+updateActiveLink(); 
+
+window.addEventListener('scroll', updateActiveLink);
+
+const positionn = document.documentElement.scrollTop;
+console.log(positionn);
+
+window.addEventListener('scroll', () => {
+    const type = typeof window.scrollY;
+    console.log(type);
+    console.log(window.scrollY);
 });
 
-// callback de l'observer
-const observerCallback = (entries) => {
-  entries.forEach(entry => {
-    const id = entry.target.id;
-    const link = idToLink[id];
-    if (!link) return;
 
-    if (entry.isIntersecting) {
 
-      Object.values(idToLink).forEach(a => {
-        a.classList.remove('active');
-        a.removeAttribute('aria-current');
-      });
+const themeToggleBtn = document.getElementById('theme-toggle');
+const body = document.body;
 
-      link.classList.add('active');
-      link.setAttribute('aria-current', 'true');
+const localStorageKey = 'user-theme';
+
+
+function applyTheme(themeName) {
+    if (themeName === 'light') {
+        body.classList.add('light-theme');
+        themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
+        // Sauvegarder le choix
+        localStorage.setItem(localStorageKey, 'light');
+    } else {
+        body.classList.remove('light-theme');
+        // Mettre à jour l'icône (afficher le soleil pour passer au clair)
+        themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
+        localStorage.setItem(localStorageKey, 'dark');
     }
-  });
-};
+}
 
 
-const observer = new IntersectionObserver(observerCallback, {
-  root: null,
-  rootMargin: '0px 0px -40% 0px', 
-  threshold: 0.15
+themeToggleBtn.addEventListener('click', () => {
+    if (body.classList.contains('light-theme')) {
+        //si body contient la classe light-theme alors on change en dark 
+        applyTheme('dark');
+    } else {
+        applyTheme('light');
+    }
 });
 
-sectionNodes.forEach(sec => observer.observe(sec));
 
-const scrollHeight = document.documentElement.scrollHeight;
-console.log(scrollHeight);
+function initTheme() {
+    const savedTheme = localStorage.getItem(localStorageKey);
 
-const scrollPosition = document.documentElement.scrollTop;
-console.log(scrollPosition);
-
+    if (savedTheme) {
+        applyTheme(savedTheme);
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+     
+        applyTheme('light');
+    } else {
+        applyTheme('dark'); 
+    }
+}
+// Se lance une seule fois
+initTheme();

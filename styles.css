@@ -17,12 +17,63 @@
   --link-color: #ff7f50;
   --link-hover: #ffa07a;
 
-  --card-bg: #15243b;
-  --card-hover: #1c2a45;
-  --card-border: rgba(255,127,80,0.15);
-  --card-shadow: rgba(0,0,0,0.4);
+  /* Hover project */
+ --card-project-bg:hsl(213, 41%, 19%);
+ --card-shadow1: 0 0 0 1px rgba(100,255,218,0.25);
+ --card-shadow2: 0 12px 32px rgba(0,0,0,0.35);
+ --card-shadow3: 0 0 32px rgba(100,255,218,0.20); 
+
   --skills: #142E3F;
   --turquoise:#64FFDA;
+
+  --chip-hover:hsl(166, 43%, 34%);
+  --chip-bc:  hsl(166, 43%, 41%);
+}
+
+.light-theme {
+  --bg: #F0F2F5;
+  --bg-light: #FFFFFF; 
+  --bg-lighter: #E2E8F0; 
+
+ 
+  --text-secondary: #5C6773; 
+  --text-main: #1D2430;
+  --text-tertiary: #7a7a7a;
+
+  --accent: #ff7f50; 
+--turquoise:#8EFEE0; 
+
+  --card-project-bg: hsl(0, 0%, 98%);
+  --card-shadow-1: 0 0 0 1px rgba(100, 255, 218, 0.40);
+  --card-shadow-2: 0 12px 32px rgba(0, 0, 0, 0.08);
+  --card-shadow-3: 0 0 24px rgba(100, 255, 218, 0.25);
+
+  --skills: #E5F3F3;
+
+    --chip-hover:hsl(166, 43%, 34%);
+  --chip-bc:  hsl(166, 43%, 41%);
+}
+
+/* --- Styles spécifiques au bouton de basculement --- */
+
+#theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    width: 3rem;
+    background-color: var(--bg-lighter);
+    color: var(--text-secondary); 
+    transition: color 0.3s ease;
+    margin-top: 1.5rem; 
+    border-radius: 20px;
+    padding: 5px 5px;
+    position: absolute;
+    top: 20px;
+}
+
+#theme-toggle:hover {
+    color: var(--accent);
 }
 
 @supports (font-variation-settings: normal) {
@@ -33,6 +84,11 @@
 
 html, body{
     height: 100%;
+}
+
+html {
+  /* Active le défilement fluide pour tous les liens internes */
+  scroll-behavior: smooth; 
 }
 
 
@@ -79,6 +135,7 @@ aside h3{
 aside p{
     margin-top: 0;
 }
+
 .nav-list {
   list-style: none;
   padding: 0;
@@ -167,7 +224,7 @@ main{
 .chip{
     color: var(--turquoise);
     padding: 10px 20px;
-    background-color: hsl(166, 43%, 41%);
+    background-color: var(--chip-bc);
     border-radius: 20px;
     font-weight: 500;
     cursor: pointer;
@@ -177,7 +234,7 @@ main{
 
 .chip:hover{
   transform: translateY(-3px);
-  background-color:  hsl(166, 43%, 34%);
+  background-color:  var(--chip-hover);
 }
 
 main a.resume-link{
@@ -220,11 +277,11 @@ a.resume-link:hover i{
 }
 
 .project-container:hover{
-   background-color: hsl(213, 41%, 19%);
+   background-color: var(--card-project-bg);
     box-shadow: 
-        0 0 0 1px rgba(100,255,218,0.25), 
-        0 12px 32px rgba(0,0,0,0.35),
-        0 0 32px rgba(100,255,218,0.20); 
+        var(--card-shadow1), 
+        var(--card-shadow2),
+        var(--card-shadow3); 
 }
 
 .title{
@@ -245,3 +302,5 @@ a.resume-link:hover i{
     transform: translate(3px, -3px);
     color: var(--turquoise);
 }
+
+Voici le code ne change rien au code mais enleve seulement les couleurs dans root qui ne sont pas utilise dans le code
