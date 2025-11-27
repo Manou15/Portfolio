@@ -1,14 +1,14 @@
-
 :root {
-
   font-family: Inter, sans-serif;
-  font-feature-settings: 'liga' 1, 'calt' 1;
+  font-feature-settings: "liga" 1, "calt" 1;
   --bg: #0e1a2b;
   --bg-light: #15243b;
   --bg-lighter: #1c2a45;
 
-  --text-secondary: #94A3B8;
-  --text-main: #E2E8F0;
+  --icon-hover: #e6e6e6;
+
+  --text-secondary: #94a3b8;
+  --text-main: #e2e8f0;
   --text-tertiary: #7a7a7a;
 
   --accent: #ff7f50;
@@ -18,129 +18,131 @@
   --link-hover: #ffa07a;
 
   /* Hover project */
- --card-project-bg:hsl(213, 41%, 19%);
- --card-shadow1: 0 0 0 1px rgba(100,255,218,0.25);
- --card-shadow2: 0 12px 32px rgba(0,0,0,0.35);
- --card-shadow3: 0 0 32px rgba(100,255,218,0.20); 
+  --card-project-bg: hsl(213, 41%, 19%);
+  --card-shadow1: 0 0 0 1px rgba(100, 255, 218, 0.25);
+  --card-shadow2: 0 12px 32px rgba(0, 0, 0, 0.35);
+  --card-shadow3: 0 0 32px rgba(100, 255, 218, 0.2);
 
-  --skills: #142E3F;
-  --turquoise:#64FFDA;
+  --skills: #142e3f;
+  --turquoise: #64ffda;
 
-  --chip-hover:hsl(166, 43%, 34%);
-  --chip-bc:  hsl(166, 43%, 41%);
+  --chip-color: #64ffda;
+  --chip-hover: hsl(166, 43%, 34%);
+  --chip-bc: hsl(166, 43%, 41%);
 }
 
 .light-theme {
-  --bg: #F0F2F5;
-  --bg-light: #FFFFFF; 
-  --bg-lighter: #E2E8F0; 
+  --bg: #f0f2f5;
+  --bg-light: #ffffff;
+  --bg-lighter: #e2e8f0;
 
- 
-  --text-secondary: #5C6773; 
-  --text-main: #1D2430;
+  --icon-hover: #1d2430;
+
+  --text-secondary: #5c6773;
+  --text-main: #1d2430;
   --text-tertiary: #7a7a7a;
 
-  --accent: #ff7f50; 
---turquoise:#8EFEE0; 
+  --accent: #ff7f50;
+  --turquoise: hsl(166, 43%, 34%);
 
   --card-project-bg: hsl(0, 0%, 98%);
-  --card-shadow-1: 0 0 0 1px rgba(100, 255, 218, 0.40);
+  --card-shadow-1: 0 0 0 1px rgba(100, 255, 218, 0.4);
   --card-shadow-2: 0 12px 32px rgba(0, 0, 0, 0.08);
   --card-shadow-3: 0 0 24px rgba(100, 255, 218, 0.25);
 
-  --skills: #E5F3F3;
+  --skills: #e5f3f3;
 
-    --chip-hover:hsl(166, 43%, 34%);
-  --chip-bc:  hsl(166, 43%, 41%);
+  --chip-color: #64ffda;
+  --chip-hover: hsl(166, 43%, 34%);
+  --chip-bc: hsl(166, 43%, 41%);
 }
 
 /* --- Styles spécifiques au bouton de basculement --- */
 
 #theme-toggle {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    width: 3rem;
-    background-color: var(--bg-lighter);
-    color: var(--text-secondary); 
-    transition: color 0.3s ease;
-    margin-top: 1.5rem; 
-    border-radius: 20px;
-    padding: 5px 5px;
-    position: absolute;
-    top: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  width: 3rem;
+  background-color: var(--bg-lighter);
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  margin-top: 1.5rem;
+  border-radius: 20px;
+  padding: 5px 5px;
+  position: absolute;
+  top: 20px;
 }
 
 #theme-toggle:hover {
-    color: var(--accent);
+  color: var(--accent);
 }
 
 @supports (font-variation-settings: normal) {
-  :root { 
-    font-family: InterVariable, sans-serif; 
+  :root {
+    font-family: InterVariable, sans-serif;
   }
 }
 
-html, body{
-    height: 100%;
+html,
+body {
+  height: 100%;
 }
 
 html {
   /* Active le défilement fluide pour tous les liens internes */
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
-
-body{
-    font-family: 'Inter',sans-serif;
-    background-color: var(--bg);
-    color: var(--text-secondary);
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text-secondary);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.container{
-    display: grid;
-    grid-template-columns: 40% 1fr;
-    min-height: 100vh;
+.container {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  min-height: 100vh;
 }
 
-.sidebar{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    position: sticky;
-    top: 0;
-    overflow: auto;
-    padding: 4.2rem 0 4.2rem 11rem;
-    box-sizing: border-box;
+.sidebar {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+  top: 0;
+  overflow: auto;
+  padding: 4.2rem 0 4.2rem 11rem;
+  box-sizing: border-box;
 }
 
-aside h1{
-    font-family: 'Inter',sans-serif;
-    color: var(--text-main);
-    margin-bottom: 0;
-    font-size: 3em;
+aside h1 {
+  font-family: "Inter", sans-serif;
+  color: var(--text-main);
+  margin-bottom: 0;
+  font-size: 3em;
 }
 
-aside h3{
-    margin-top: 9px;
-    color: var(--text-main);
-    font-size: 1.5em;
+aside h3 {
+  margin-top: 9px;
+  color: var(--text-main);
+  font-size: 1.5em;
 }
 
-aside p{
-    margin-top: 0;
+aside p {
+  margin-top: 0;
 }
 
 .nav-list {
   list-style: none;
   padding: 0;
   margin: 85px 0 140px 0;
-
 }
 
 .nav-list li {
@@ -150,157 +152,158 @@ aside p{
 .nav-list li a {
   text-decoration: none;
   font-size: 13px;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-weight: bold;
-  
-  color: var(--text-secondary); 
-  transition: color .18s ease;
-}
 
+  color: var(--text-secondary);
+  transition: color 0.18s ease;
+}
 
 .nav-list .nav-line {
   display: inline-block;
   width: 40px;
   height: 1.7px;
-  background-color: var(--text-secondary); 
+  background-color: var(--text-secondary);
   margin-right: 0.75rem;
-  margin-bottom: 0.20rem;
-  transition: width 240ms cubic-bezier(.2,.9,.3,1), background-color 180ms ease;
+  margin-bottom: 0.2rem;
+  transition: width 240ms cubic-bezier(0.2, 0.9, 0.3, 1),
+    background-color 180ms ease;
 }
 
-
 .nav-list li a:hover {
-  color: var(--text-main); 
+  color: var(--text-main);
 }
 
 /*js style*/
 .nav-list a.active {
-  color: var(--text-main); 
+  color: var(--text-main);
 }
-
 
 .nav-list a.active .nav-line {
   width: 65px;
-  background-color: var(--text-main); 
+  background-color: var(--text-main);
 }
 
-
-
-
-.icon i{
-    color: var(--text-secondary);
-    font-size: 1.6rem;
-    margin-right: 20px;
-    transition:color 0.1 ease ;
+.icon i {
+  color: var(--text-secondary);
+  font-size: 1.6rem;
+  margin-right: 20px;
+  transition: color 0.1 ease;
 }
 
-.icon i:hover{
-    color: #e6e6e6;
+.icon i:hover {
+  color: var(--icon-hover);
 }
 
 /*main*/
-main .about{
-    color: var(--text-secondary);
-    font-size: 17px;
+main .about {
+  color: var(--text-secondary);
+  font-size: 17px;
 }
 
-main{
-    margin: 4.2rem auto;
-    width: 35rem;
-    line-height: 1.5;
+main {
+  margin: 4.2rem auto;
+  width: 35rem;
+  line-height: 1.5;
 }
 
-.chips{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.6rem;
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
 }
 
-.myH3{
-    color: var(--text-secondary);
-    margin-top: 30px;
+.myH3 {
+  color: var(--text-secondary);
+  margin-top: 30px;
 }
 
-.chip{
-    color: var(--turquoise);
-    padding: 10px 20px;
-    background-color: var(--chip-bc);
-    border-radius: 20px;
-    font-weight: 500;
-    cursor: pointer;
-     transition: transform .3s ease;
-     margin: 10px 15px;
+.chip {
+  color: var(--chip-color);
+  padding: 10px 20px;
+  background-color: var(--chip-bc);
+  border-radius: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin: 10px 15px;
 }
 
-.chip:hover{
+.chip:hover {
   transform: translateY(-3px);
-  background-color:  var(--chip-hover);
+  background-color: var(--chip-hover);
 }
 
-main a.resume-link{
-    text-decoration: none;
-    color: var(--text-secondary);
-    display: inline-block;
-    margin: 30px 0 50px 0;
+main a.resume-link {
+  text-decoration: none;
+  color: var(--text-secondary);
+  display: inline-block;
+  margin: 30px 0 50px 0;
 }
 
-main a.resume-link i{
-    font-size: 1.4rem;
-    transition: transform 0.2s ease, color 0.2s ease;
+main a.resume-link i {
+  font-size: 1.4rem;
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-
-
-main a.resume-link:hover{
-    color: var(--turquoise);
+main a.resume-link:hover {
+  color: var(--turquoise);
 }
 
-a.resume-link:hover i{
-    transform: translate(3px, -3px);
-    color: var(--turquoise);
+a.resume-link:hover i {
+  transform: translate(3px, -3px);
+  color: var(--turquoise);
 }
 
 /*projects*/
-#projects h3{
-    margin-bottom: 30px;
+#projects h3 {
+  margin-bottom: 30px;
 }
 
-.project-container{
-    display: grid;
-    grid-template-columns: 20% 1fr;
-    padding: 10px 20px;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-     transition: all 0.25s ease;
+.project-container {
+  display: grid;
+  grid-template-columns: 20% 1fr;
+  padding: 10px 20px;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  transition: all 0.25s ease;
 }
 
-.project-container:hover{
-   background-color: var(--card-project-bg);
-    box-shadow: 
-        var(--card-shadow1), 
-        var(--card-shadow2),
-        var(--card-shadow3); 
+.project-container:hover {
+  background-color: var(--card-project-bg);
+  box-shadow: var(--card-shadow1), var(--card-shadow2), var(--card-shadow3);
 }
 
-.title{
-    color: var(--text-main);
-    font-size: 1.2em;
+.title {
+  color: var(--text-main);
+  font-size: 1.2em;
 }
 
-.title i{
-        transition: transform 0.2s ease, color 0.2s ease;
-
+.title i {
+  transition: transform 0.2s ease, color 0.2s ease;
 }
 
-.title:hover{
-    color: var(--turquoise);
+.title:hover {
+  color: var(--turquoise);
 }
 
-.title:hover i{
-    transform: translate(3px, -3px);
-    color: var(--turquoise);
+.title:hover i {
+  transform: translate(3px, -3px);
+  color: var(--turquoise);
 }
 
-Voici le code ne change rien au code mais enleve seulement les couleurs dans root qui ne sont pas utilise dans le code
+footer {
+  margin: 5rem 0 5px 0;
+}
+
+footer a {
+  color: var(--text-main);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+footer a:hover {
+  color: var(--turquoise);
+}

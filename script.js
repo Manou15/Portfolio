@@ -58,11 +58,12 @@ window.addEventListener('scroll', () => {
 });
 
 
-
+//Dark & Light features
 const themeToggleBtn = document.getElementById('theme-toggle');
 const body = document.body;
 
 const localStorageKey = 'user-theme';
+const savedTheme = localStorage.getItem(localStorageKey);
 
 
 function applyTheme(themeName) {
