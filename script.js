@@ -48,14 +48,6 @@ updateActiveLink();
 
 window.addEventListener('scroll', updateActiveLink);
 
-const positionn = document.documentElement.scrollTop;
-console.log(positionn);
-
-window.addEventListener('scroll', () => {
-    const type = typeof window.scrollY;
-    console.log(type);
-    console.log(window.scrollY);
-});
 
 
 //Dark & Light features
@@ -64,44 +56,37 @@ const body = document.body;
 
 const localStorageKey = 'user-theme';
 const savedTheme = localStorage.getItem(localStorageKey);
+console.log(savedTheme);
 
+function initTheme(){
+    
+    if(savedTheme === 'light' || savedTheme === 'dark'){
+        changeTheme(savedTheme);
+    } else {
+        changeTheme('dark');
+    }
+}
 
-function applyTheme(themeName) {
-    if (themeName === 'light') {
+function changeTheme(themeName){
+    if(themeName === 'light'){
         body.classList.add('light-theme');
         themeToggleBtn.innerHTML = '<i class="fas fa-moon"></i>';
-        // Sauvegarder le choix
+        //sauvegarder le theme 
         localStorage.setItem(localStorageKey, 'light');
     } else {
         body.classList.remove('light-theme');
-        // Mettre à jour l'icône (afficher le soleil pour passer au clair)
         themeToggleBtn.innerHTML = '<i class="fas fa-sun"></i>';
         localStorage.setItem(localStorageKey, 'dark');
     }
 }
 
 
-themeToggleBtn.addEventListener('click', () => {
-    if (body.classList.contains('light-theme')) {
-        //si body contient la classe light-theme alors on change en dark 
-        applyTheme('dark');
+initTheme();
+
+themeToggleBtn.addEventListener('click', () =>{
+    if(body.classList.contains('light-theme')){
+        changeTheme('dark');
     } else {
-        applyTheme('light');
+        changeTheme('light');
     }
 });
-
-
-function initTheme() {
-    const savedTheme = localStorage.getItem(localStorageKey);
-
-    if (savedTheme) {
-        applyTheme(savedTheme);
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-     
-        applyTheme('light');
-    } else {
-        applyTheme('dark'); 
-    }
-}
-// Se lance une seule fois
-initTheme();
