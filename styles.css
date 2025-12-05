@@ -307,3 +307,115 @@ footer a {
 footer a:hover {
   color: var(--turquoise);
 }
+
+/*MOBILE*/
+@media (max-width: 768px) {
+
+  .container {
+    grid-template-columns: 1fr; /* tout en colonne */
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    padding: 2rem 2rem; /* réduit le padding */
+    text-align: center; /* centrer le contenu */
+  }
+
+  .sidebar h1, .sidebar h3 {
+    font-size: 2rem;
+  }
+
+  .nav-list {
+    margin: 2rem 0;
+  }
+
+  #theme-toggle {
+    position: static;
+    margin: 1rem auto;
+  }
+
+  main {
+    width: 100%;
+    padding: 0 1.5rem;
+    margin: 2rem auto;
+  }
+
+  .project-container {
+    grid-template-columns: 1fr; /* image au dessus du texte */
+    text-align: center;
+  }
+
+  .project-container img {
+    margin: 0 auto 1rem auto;
+  }
+
+  .chips {
+    justify-content: center;
+  }
+}
+
+/*tablette*/
+@media (min-width: 769px) and (max-width: 992px) {
+
+  .container {
+    grid-template-columns: 35% 1fr; /* sidebar plus petite que desktop */
+  }
+
+  .sidebar {
+    padding: 2rem 1.5rem;
+    height: auto;
+  }
+
+  aside h1 {
+    font-size: 2.5rem;
+  }
+
+  aside h3 {
+    font-size: 1.3rem;
+  }
+
+  main {
+    width: 90%;
+    margin: 2rem auto;
+  }
+
+  .project-container {
+    grid-template-columns: 25% 1fr; /* image un peu plus grande */
+  }
+
+  .project-container img {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/*DESKTOP LARGE */
+@media (min-width: 993px) {
+
+  .container {
+    grid-template-columns: 40% 1fr; /* ton layout d’origine */
+  }
+
+  .sidebar {
+    padding: 4.2rem 0 4.2rem 11rem;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+
+  main {
+    width: 35rem; /* comme avant */
+    margin: 4.2rem auto;
+  }
+
+  .project-container {
+    grid-template-columns: 20% 1fr;
+  }
+
+  .project-container img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
