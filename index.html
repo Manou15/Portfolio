@@ -1,207 +1,185 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="icon" href="/assets/M.png" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
-  </head>
-  <body>
-    <div class="container">
-      <aside class="sidebar">
-        <h1>Yami Sukehiro</h1>
-        <h3>Empereur Mage</h3>
-        <p>The next emperor mage , will be <br />me and there is no debate</p>
 
-        <nav>
-          <ul class="nav-list">
-            <li>
-              <a href="#about"><span class="nav-line"></span>ABOUT</a>
-            </li>
-            <li>
-              <a href="#skills-sections"
-                ><span class="nav-line"></span>SKILLS & TECHNOLOGIES</a
-              >
-            </li>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/assets/M.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="preconnect" href="https://rsms.me/" />
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+</head>
 
-            <li>
-              <a href="#projects"><span class="nav-line"></span>PROJECTS</a>
-            </li>
-          </ul>
-        </nav>
+<body>
+  <button id="hamburger-btn" aria-label="Ouvrir le menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
+  
+  <div class="container">
+    <aside class="sidebar">
+      <h1>Yami Sukehiro</h1>
+      <h3>Empereur Mage</h3>
+      <p>The next emperor mage , will be <br />me and there is no debate</p>
 
-        <section class="icon">
-          <a href="https://www.instagram.com/manou.aieul/">
-            <i class="fa-brands fa-instagram"></i>
-          </a>
+      <nav>
+        <ul class="nav-list">
+          <li>
+            <a href="#about"><span class="nav-line"></span>ABOUT</a>
+          </li>
+          <li>
+            <a href="#skills-sections"><span class="nav-line"></span>SKILLS & TECHNOLOGIES</a>
+          </li>
 
-          <a href="https://github.com/Manou15">
-            <i class="fa-brands fa-github"></i>
-          </a>
+          <li>
+            <a href="#projects"><span class="nav-line"></span>PROJECTS</a>
+          </li>
+        </ul>
+      </nav>
 
-          <a href="#">
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-
-          <a href="mailto:manourandriafara@gmail.com" target="_blank">
-            <i class="fa-regular fa-envelope"></i>
-          </a>
-        </section>
-
-        <button id="theme-toggle" aria-label="Basculer le thème clair/sombre">
-          <i class="fas fa-moon"></i>
-        </button>
-      </aside>
-
-      <main class="content">
-        <section id="about">
-          I’m a junior developer passionate about building clean, accessible,
-          and visually appealing user interfaces. I enjoy transforming ideas
-          into functional and intuitive digital experiences, focusing on
-          simplicity, clarity, and performance. <br /><br />
-
-          Currently, I’m sharpening my skills in front-end development through
-          academic projects in <abbr title="Conservatoire national des arts et métiers">CNAM</abbr>, personal experiments, and hands-on practice with
-          modern web technologies. I’ve already built several applications—from
-          Java games and interactive browser experiences to API-powered
-          projects—and each one has strengthened my understanding of real-world
-          development principles. <br />
-          <br />
-
-          I’m particularly drawn to the intersection of design and code:
-          creating interfaces that not only work well, but feel great to use. My
-          goal is to keep improving, stay curious, and build projects that
-          reflect both technical precision and thoughtful design. <br /><br />
-
-          I’m now actively looking for an internship where I can grow as a
-          developer, contribute to impactful projects, and continue developing
-          my expertise in front-end technologies and software engineering.
-        </section>
-
-        <section id="skills-sections">
-          <h3 class="myH3">Skills & Technologies</h3>
-          <div class="chips">
-            <span class="chip">HTML</span>
-
-            <span class="chip">CSS</span>
-
-            <span class="chip">Javascript</span>
-
-            <span class="chip">Java</span>
-
-            <span class="chip">Python</span>
-
-            <span class="chip">Git</span>
-
-            <span class="chip">Next.js</span>
-
-            <span class="chip">Github</span>
-          </div>
-        </section>
-
-        <a
-          class="resume-link"
-          href="assets/resume.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          View Full Résumé <i class="fa-solid fa-turn-up"></i>
+      <section class="icon">
+        <a href="https://www.instagram.com/manou.aieul/">
+          <i class="fa-brands fa-instagram"></i>
         </a>
 
-        <section id="projects">
-          <h3 class="myH3">Projects</h3>
-          <div class="project-container">
-            <img
-              src="/assets/connect4.png"
-              alt="connect4"
-              width="100px"
-              height="100px"
-            />
-            <div class="project-description">
-              <p class="title">
-                Connect4Game <i class="fa-solid fa-turn-up"></i>
-              </p>
-              <p class="desc">
-                Jeu Puissance 4 avec logique de vérification des lignes
-                gagnantes; en S1 j’ai codé la logique, en S2 j’ai ajouté
-                l’interface graphique.
-              </p>
-            </div>
+        <a href="https://github.com/Manou15">
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a href="#">
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a href="mailto:manourandriafara@gmail.com" target="_blank">
+          <i class="fa-regular fa-envelope"></i>
+        </a>
+      </section>
+
+      <button id="theme-toggle" aria-label="Basculer le thème clair/sombre">
+        <i class="fas fa-moon"></i>
+      </button>
+    </aside>
+
+    <main class="content">
+      <section id="about">
+        I’m a junior developer passionate about building clean, accessible,
+        and visually appealing user interfaces. I enjoy transforming ideas
+        into functional and intuitive digital experiences, focusing on
+        simplicity, clarity, and performance. <br /><br />
+
+        Currently, I’m sharpening my skills in front-end development through
+        academic projects in <abbr title="Conservatoire national des arts et métiers">CNAM</abbr>, personal experiments,
+        and hands-on practice with
+        modern web technologies. I’ve already built several applications—from
+        Java games and interactive browser experiences to API-powered
+        projects—and each one has strengthened my understanding of real-world
+        development principles. <br />
+        <br />
+
+        I’m particularly drawn to the intersection of design and code:
+        creating interfaces that not only work well, but feel great to use. My
+        goal is to keep improving, stay curious, and build projects that
+        reflect both technical precision and thoughtful design. <br /><br />
+
+        I’m now actively looking for an internship where I can grow as a
+        developer, contribute to impactful projects, and continue developing
+        my expertise in front-end technologies and software engineering.
+      </section>
+
+      <section id="skills-sections">
+        <h3 class="myH3">Skills & Technologies</h3>
+        <div class="chips">
+          <span class="chip">HTML</span>
+
+          <span class="chip">CSS</span>
+
+          <span class="chip">Javascript</span>
+
+          <span class="chip">Java</span>
+
+          <span class="chip">Python</span>
+
+          <span class="chip">Git</span>
+
+          <span class="chip">Next.js</span>
+
+          <span class="chip">Github</span>
+        </div>
+      </section>
+
+      <a class="resume-link" href="assets/resume.pdf" target="_blank" rel="noopener noreferrer">
+        View Full Résumé <i class="fa-solid fa-turn-up"></i>
+      </a>
+
+      <section id="projects">
+        <h3 class="myH3">Projects</h3>
+        <div class="project-container">
+          <img src="/assets/connect4.png" alt="connect4" width="100px" height="100px" />
+          <div class="project-description">
+            <p class="title">
+              Connect4Game <i class="fa-solid fa-turn-up"></i>
+            </p>
+            <p class="desc">
+              Jeu Puissance 4 avec logique de vérification des lignes
+              gagnantes; en S1 j’ai codé la logique, en S2 j’ai ajouté
+              l’interface graphique.
+            </p>
           </div>
+        </div>
 
-          <div class="project-container">
-            <img
-              src="/assets/password.png"
-              alt="connect4"
-              width="100px"
-              height="100px"
-            />
-            <div class="project-description">
-              <p class="title">
-                Password Generator <i class="fa-solid fa-turn-up"></i>
-              </p>
-              <p class="desc">
-                Générateur configurable (inclure symboles, lowercase, uppercase,
-                chiffres). Interface simple et exportable.
-              </p>
-            </div>
+        <div class="project-container">
+          <img src="/assets/password.png" alt="connect4" width="100px" height="100px" />
+          <div class="project-description">
+            <p class="title">
+              Password Generator <i class="fa-solid fa-turn-up"></i>
+            </p>
+            <p class="desc">
+              Générateur configurable (inclure symboles, lowercase, uppercase,
+              chiffres). Interface simple et exportable.
+            </p>
           </div>
+        </div>
 
-          <div class="project-container">
-            <img
-              src="/assets/pikatchu.png"
-              alt="connect4"
-              width="100px"
-              height="100px"
-            />
-            <div class="project-description">
-              <p class="title">
-                Pokémon Search <i class="fa-solid fa-turn-up"></i>
-              </p>
-              <p class="desc">
-                Recherche et affichage d'informations Pokémon via la PokéAPI —
-                filtres, pagination et détails de chaque Pokémon.
-              </p>
-            </div>
+        <div class="project-container">
+          <img src="/assets/pikatchu.png" alt="connect4" width="100px" height="100px" />
+          <div class="project-description">
+            <p class="title">
+              Pokémon Search <i class="fa-solid fa-turn-up"></i>
+            </p>
+            <p class="desc">
+              Recherche et affichage d'informations Pokémon via la PokéAPI —
+              filtres, pagination et détails de chaque Pokémon.
+            </p>
           </div>
+        </div>
 
-          <div class="project-container">
-            <img
-              src="/assets/weather.png"
-              alt="connect4"
-              width="100px"
-              height="100px"
-            />
-            <div class="project-description">
-              <p class="title">
-                Weather App <i class="fa-solid fa-turn-up"></i>
-              </p>
-              <p class="desc">
-                Application météo affichant conditions locales, recherche par
-                ville et prévisions sur 5 jours.
-              </p>
-            </div>
+        <div class="project-container">
+          <img src="/assets/weather.png" alt="connect4" width="100px" height="100px" />
+          <div class="project-description">
+            <p class="title">
+              Weather App <i class="fa-solid fa-turn-up"></i>
+            </p>
+            <p class="desc">
+              Application météo affichant conditions locales, recherche par
+              ville et prévisions sur 5 jours.
+            </p>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <footer>
-          Coded in
-          <a href="https://code.visualstudio.com/">Visual Studio Code</a> by
-          Aïeul. Built with <a href="">HTML & CSS </a>and
-          <a href="">JavaScript</a>, deployed with
-          <a href="https://vercel.com/">Vercel</a>. All text is set in the
-          <a href="https://rsms.me/inter/">Inter</a> typeface.
-        </footer>
-      </main>
-    </div>
+      <footer>
+        Coded in
+        <a href="https://code.visualstudio.com/">Visual Studio Code</a> by
+        Aïeul. Built with <a href="">HTML & CSS </a>and
+        <a href="">JavaScript</a>, deployed with
+        <a href="https://vercel.com/">Vercel</a>. All text is set in the
+        <a href="https://rsms.me/inter/">Inter</a> typeface.
+      </footer>
+    </main>
+  </div>
 
-    <script src="script.js"></script>
-  </body>
+  <script src="script.js"></script>
+</body>
+
 </html>

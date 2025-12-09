@@ -90,3 +90,51 @@ themeToggleBtn.addEventListener('click', () =>{
         changeTheme('light');
     }
 });
+
+const hamburgerBtn = document.getElementById('hamburger-btn');
+const sidebar = document.querySelector('.sidebar');
+const menuLinks = document.querySelectorAll('.nav-list a'); // Tous les liens du menu
+const mainContent = document.querySelector('.content');
+
+//Ouvrir / Fermer le menu au clic sur le bouton
+hamburgerBtn.addEventListener('click', (e) => {
+    e.stopPropagation(); // Empêche le clic de se propager au document
+    sidebar.classList.toggle('active');
+    
+    // Change l'icône du bouton (Bars <-> Croix)
+    const icon = hamburgerBtn.querySelector('i');
+    if (sidebar.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-xmark');
+    } else {
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    }
+});
+
+//Fermer le menu quand on clique sur un lien de navigation
+menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 968) { // Uniquement sur mobile
+            sidebar.classList.remove('active');
+            // Remettre l'icône hamburger
+            const icon = hamburgerBtn.querySelector('i');
+            icon.classList.remove('fa-xmark');
+            icon.classList.add('fa-bars');
+        }
+    });
+});
+
+//Fermer le menu si on clique n'importe où ailleurs sur l'écran
+document.addEventListener('click', (e) => {
+    // Si le menu est ouvert ET qu'on ne clique ni sur la sidebar ni sur le bouton
+    if (sidebar.classList.contains('active') && 
+        !sidebar.contains(e.target) && 
+        e.target !== hamburgerBtn) {
+        
+        sidebar.classList.remove('active');
+        const icon = hamburgerBtn.querySelector('i');
+        icon.classList.remove('fa-xmark');
+        icon.classList.add('fa-bars');
+    }
+});
