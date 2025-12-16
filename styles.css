@@ -327,7 +327,8 @@ img {
 
 /* petit style pour le hamburger si on l'ajoute via JS */
 #hamburger-btn {
-  display: none; /* visible seulement en mobile via media query */
+  display: none;
+  /* visible seulement en mobile via media query */
   background: none;
   border: none;
   cursor: pointer;
@@ -336,6 +337,7 @@ img {
   font-size: 1.4rem;
   border-radius: 8px;
 }
+
 .hamburger:focus {
   outline: 2px solid var(--turquoise);
   outline-offset: 2px;
@@ -347,11 +349,13 @@ img {
 
 /* 1. Style du bouton Hamburger (Caché sur PC par défaut) */
 #hamburger-btn {
-  display: none; /* Invisible sur grand écran */
+  display: none;
+  /* Invisible sur grand écran */
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
-  z-index: 1000; /* Toujours au-dessus de tout */
+  z-index: 1000;
+  /* Toujours au-dessus de tout */
   background-color: var(--bg-lighter);
   color: var(--text-main);
   border: 1px solid var(--text-secondary);
@@ -360,7 +364,7 @@ img {
   height: 50px;
   font-size: 1.5rem;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
@@ -381,8 +385,10 @@ img {
 
   /* B. On change la disposition globale (plus de grille) */
   .container {
-    display: block; /* On empile tout */
-    overflow-x: hidden; /* Évite le scroll horizontal accidentel */
+    display: block;
+    /* On empile tout */
+    overflow-x: hidden;
+    /* Évite le scroll horizontal accidentel */
   }
 
   /* C. Transformation de la Sidebar en Menu Mobile Coulissant */
@@ -391,39 +397,51 @@ img {
     top: 0;
     left: 0;
     height: 100vh;
-    width: 280px; /* Largeur du menu mobile */
+    width: 280px;
+    /* Largeur du menu mobile */
     max-width: 80%;
-    background-color: var(--bg); /* Fond opaque obligatoire */
+    background-color: var(--bg);
+    /* Fond opaque obligatoire */
     z-index: 999;
     padding: 2rem;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
-    
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
+
     /* Animation de glissement */
-    transform: translateX(-100%); /* Caché à gauche */
+    transform: translateX(-100%);
+    /* Caché à gauche */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    
+
     /* Pour scroller dans le menu si l'écran est petit */
-    overflow-y: auto; 
+    overflow-y: auto;
   }
 
   /* Classe active injectée par JS pour ouvrir le menu */
   .sidebar.active {
-    transform: translateX(0); /* On le ramène à l'écran */
+    transform: translateX(0);
+    /* On le ramène à l'écran */
   }
 
   /* Ajustements internes de la sidebar mobile */
   .nav-list {
-    margin: 40px 0; /* Un peu moins d'espace */
+    margin: 40px 0;
+    /* Un peu moins d'espace */
   }
-  
-  aside h1 { font-size: 2em; } /* Titre un peu plus petit */
+
+  aside h1 {
+    font-size: 2em;
+  }
+
+  /* Titre un peu plus petit */
 
   /* D. Ajustement du Contenu Principal */
   main {
-    width: 90%;      /* Prend presque toute la largeur */
+    width: 90%;
+    /* Prend presque toute la largeur */
     max-width: 600px;
-    margin: 0 auto;  /* Centré */
-    padding: 80px 0 4rem 0; /* Padding-top de 80px pour laisser place au bouton hamburger */
+    margin: 0 auto;
+    /* Centré */
+    padding: 80px 0 4rem 0;
+    /* Padding-top de 80px pour laisser place au bouton hamburger */
   }
 
   /* E. Les projets en une seule colonne */
@@ -434,12 +452,14 @@ img {
   }
 
   .project-container img {
-    margin: 0 auto; /* Centre l'image */
+    margin: 0 auto;
+    /* Centre l'image */
   }
 
   /* Ajustement du bouton thème dans la sidebar */
   #theme-toggle {
-    position: static; /* Plus de position absolute */
+    position: static;
+    /* Plus de position absolute */
     margin-top: 2rem;
     width: 100%;
     border-radius: 8px;
@@ -452,8 +472,9 @@ img {
   main {
     width: 92%;
   }
-  
+
   .chips {
-    justify-content: center; /* Centre les badges compétences */
+    justify-content: center;
+    /* Centre les badges compétences */
   }
 }
