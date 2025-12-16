@@ -195,6 +195,11 @@ aside p {
   color: var(--icon-hover);
 }
 
+.icon a{
+  text-decoration: none;
+  
+}
+
 /*main*/
 main .about {
   color: var(--text-secondary);
