@@ -284,6 +284,8 @@ a.resume-link:hover i {
 .title {
   color: var(--text-main);
   font-size: 1.2em;
+  text-decoration: none;
+  transition: all 0.4s ease;
 }
 
 .title i {
@@ -313,7 +315,6 @@ footer a:hover {
   color: var(--turquoise);
 }
 
-/* ================== AJOUTS / AMÉLIORATIONS ================== */
 
 /* images fluides pour éviter débordements */
 img {
@@ -349,18 +350,13 @@ img {
 }
 
 
-/* RESPONSIVE DESIGN & HAMBURGER MENU
-   Mobile */
 
-/* 1. Style du bouton Hamburger (Caché sur PC par défaut) */
 #hamburger-btn {
   display: none;
-  /* Invisible sur grand écran */
   position: fixed;
   top: 1.5rem;
   right: 1.5rem;
   z-index: 1000;
-  /* Toujours au-dessus de tout */
   background-color: var(--bg-lighter);
   color: var(--text-main);
   border: 1px solid var(--text-secondary);
@@ -378,58 +374,43 @@ img {
   border-color: var(--accent);
 }
 
-/*MEDIA QUERIES (Tablettes et Mobiles - Max 968px)*/
 @media screen and (max-width: 968px) {
 
-  /* A. On affiche le bouton hamburger */
   #hamburger-btn {
     display: flex;
     justify-content: center;
     align-items: center;
   }
 
-  /* B. On change la disposition globale (plus de grille) */
   .container {
     display: block;
-    /* On empile tout */
     overflow-x: hidden;
-    /* Évite le scroll horizontal accidentel */
   }
 
-  /* C. Transformation de la Sidebar en Menu Mobile Coulissant */
   .sidebar {
     position: fixed;
     top: 0;
     left: 0;
     height: 100vh;
     width: 280px;
-    /* Largeur du menu mobile */
     max-width: 80%;
     background-color: var(--bg);
-    /* Fond opaque obligatoire */
     z-index: 999;
     padding: 2rem;
     box-shadow: 5px 0 15px rgba(0, 0, 0, 0.5);
 
-    /* Animation de glissement */
     transform: translateX(-100%);
-    /* Caché à gauche */
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-    /* Pour scroller dans le menu si l'écran est petit */
     overflow-y: auto;
   }
 
-  /* Classe active injectée par JS pour ouvrir le menu */
   .sidebar.active {
     transform: translateX(0);
-    /* On le ramène à l'écran */
   }
 
-  /* Ajustements internes de la sidebar mobile */
   .nav-list {
     margin: 40px 0;
-    /* Un peu moins d'espace */
   }
 
   aside h1 {
